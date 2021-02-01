@@ -1,0 +1,33 @@
+------------node简介------------
+###### mmys-h
+###### 2021/02//02
+
+--node特点
+    · 开源
+    · 跨平台环境
+    · 使用v8浏览器引擎
+    · 对前端开发人员友好
+    · 异步
+--node语言
+    ` javascript
+--库资源
+    · npm
+--相关框架
+    `adonisJs
+    `egg.js
+    `express
+    `fastify
+    `gatsby
+    `hapi
+    `loopback.io
+    `meteor
+    `micro
+    `nestJs
+    `nextJs
+    `nx
+    `sapper
+    `socket.io
+    `strapi
+--node安装
+    ~ https://nodejs.org/en/download/
+--示例 hello_node.js

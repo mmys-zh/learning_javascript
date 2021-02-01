@@ -1,0 +1,47 @@
+------------node历史----------
+###### mmys-zh
+###### 2021/02/02
+
+--总览
+    - node诞生于2009年,至今有12年
+--概览
+    -2009
+        · node诞生
+        · npm第一种形式
+    -2010
+        · express诞生
+        · socket.io诞生
+    -2011
+        · npm 1.0
+        · node被大公司使用
+        · hapi诞生
+    -2012
+        · node被广泛认同
+    -2013
+        · node用于大型博客平台
+        · koa诞生
+    -2014
+        · io.js诞生
+    -2015 
+        · node基金会诞生
+        · node合并了io.js
+        · npm引入私有模块
+        · node 4
+    -2016
+        · yarn诞生
+        · node 6
+    -2017
+        · npm安全
+        · node 8
+        · HTTP/2
+        · v8引入node
+    -2018
+        · node 10
+        · es模块支持
+        · node 11
+    -2019
+        · node 12
+        · node 13
+    -2020
+        · node 14
+        · node 15
