@@ -13,5 +13,12 @@
         独立于托管他的浏览器
         采用c++编写
         跨平台使用
+--其他浏览器引擎
+    -火狐
+        SpiderMonkey
+    -safari
+        JavascriptCore
+    -Edge
+        Chakra、v8
 --参考网站
 1   https://v8.dev/
