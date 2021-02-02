@@ -29,6 +29,23 @@
             npm update
         · 更新单个包
             npm update <package-name>
+        · 强制全局更新
+            使用npm-check-updates包
+            步骤：
+                - npm install -g npm-check-updates
+                - ncu -u
+                - npm update
+    --卸载包
+        · 卸载本地安装的包
+            npm uninstall <package-name>
+        · 卸载全局安装的包
+            npm uninstall -g <package-name>
+        · 卸载同时删除package.json文件中的依赖引用
+            npm uninstall -S <package-name>
+            npm uninstall --save <package-name>
+        · 卸载同时删除package.json文件中的开发依赖引用
+            npm uninstall -D <package-name>
+            npm uninstall --save-dev <package-name>
     --管理版本
         · npm version
         TIP: 使用nvm可以同步管理node和npm的版本
@@ -37,3 +54,34 @@
 --使用或执行npm安装的包
     · 在代码中使用require模块引入软件包
     · 使用npx执行软件包
+--查找nom软件包的安装版本
+    - npm list 查看所有已安装的npm软件包的版本，包括它们的依赖性
+    - npm list -g   只查看全局安装的包
+    - npm list --depth=0  仅获取顶级软件包
+    - npm list <packageName>  通过指定特定软件包的名称来获取其版本
+    - npm list minimist  获取安装的软件包依赖项
+    - npm view <packageName> version 查看npm存储库上软件包的最新可用版本
+--安装指定版本的npm软件包
+    - npm install <packageName>@<version> 本地安装
+    - npm install -g <packageName>@<version> 全局安装
+    - npm view <packageName> versions 列出包的所有版本
+--npm的语义版本控制
+    --概念：
+        格式：x.x.x
+            【主要版本.次要版本.补丁版本】
+        发布新版本的规则
+            · 进行不兼容的API更改时，可以升级到主要版本
+            · 以向后兼容的方式添加功能时，可以升级次要版本
+            · 向后兼容的错误修复时，可以升级补丁程序版本
+    --规则符号
+        ` ^     只会执行不会更改最左边的非零数字的更新
+        ` ~     只更新补丁版本
+        ` >     接受比指定的版本更高的任何版本
+        ` >=
+        ` <
+        ` <=
+        ` =
+        ` -     接受范围内各种版本【2.1.0 - 2.6.2】
+        ` ||    组合
+        ` latest    最新版本
+        ` 无符号    只接受指定的版本

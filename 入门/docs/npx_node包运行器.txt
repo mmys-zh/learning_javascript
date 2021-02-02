@@ -1,0 +1,20 @@
+----------------npx_node包运行器-------------------
+###### mmys-zh
+###### 2021/02/02
+
+
+--npx简介
+    -作用
+        运行使用node构建并通过npm注册表发布的代码
+    -特点
+        无需单独安装
+        无需知道包路径 
+        可以使用#version运行同意命令的不同版本
+        可直接运行url连接代码
+--示例
+    npx cowsay "Hello"
+    npx node@10 -v #v10.18.1
+    npx node@12 -v #v12.14.1
+    npx https://gist.github.com/zkat/4bc19503fe9e9309e2bfaa2c58074d32
+    npx @vue/cli create my-vue-app
+    npx create-react-app my-react-app

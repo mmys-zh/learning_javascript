@@ -2,4 +2,49 @@
 ###### mmys-zh
 ###### 2021/02/02
 
-https://nodejs.dev/learn/the-package-json-guide
+
+package.json文件是js项目的配置单，包含所有的配置信息
+--文件结构
+    必须遵循JSON格式
+    示例：  package.json  【vueJs项目文件中的package.json文件】
+--属性分类
+    · name 包名称
+    · author 包作者名称
+    · contributors 包贡献者
+    · bugs 包bug提交地址
+    · homepage 包主页
+    · version 包版本
+        格式：x.x.x
+            【主要版本，次要版本，补丁版本】
+                -仅修复错误的发行版是补丁发行版
+                -引入向后兼容更改的发行版是次要发行版
+                -主要发行版可能具有重大更改
+    · license 包的许可证
+    · keywords 与包功能相关的关键字数组
+    · description 包的简短描述
+    · repository 包存储位置
+        可以显示设置版本控制系统
+    · main 包的入口节点
+    · private 设置为true防止包被意外发布到npm
+    · scripts 定义一组可以运行的命令行应用程序
+    · dependencies 安装为依赖项的软件包列表
+    · devDependencies 安装为开发依赖项的软件包列表
+    · engines 包可处理的Node.js版本和版本控制工具版本
+    · browserslist 要支持的浏览器列表
+        https://www.npmjs.com/package/browserslist
+--semver表示法
+    用于设置要升级到的版本
+    · ~0.13.0 只想更新补丁程序版本：0.13.1可以，但0.14.0不能
+    · ^0.13.0 要更新补丁程序和次要发行版：0.13.1，0.14.0依此类推
+    · 0.13.0 始终使用确切的版本
+
+
+----------------------package-lock.json文件--------------------------
+###### mmys-zh
+###### 2021/02/02
+
+
+--作用
+    是package.json文件的扩充，用于跟踪安装的每个软件包的确切版本，保证软件在更新运行维护时采用相同的版本以维持运行环境的一致性
+--示例
+    package-lock.json
