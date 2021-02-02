@@ -24,4 +24,57 @@
     --简介
         一种可避免回调地狱的处理异步代码的方法
         定义为最终将变为可用值的代理
+        异步函数在底层使用Promise，了解Promises的工作方式有助于了解async和await
+    --工作方式
+        ~ Promise被调用后会一直处于运行状态，一直为内部的函数提供所需的数据资源
+        ~ Promise最终会返回两种状态
+            · 被解决状态    调用then函数
+            · 被拒绝状态    调用catch函数
+    --使用Promise的JS API
+        ` battery API
+        ` fetch API
+        ` service worker
+        ` 等等
+    --使用
+        【示例：promise.js】
+        --创建Promise
+            使用new Promise()进行初始化
+                使用resolve和reject可以向调用者传达最终的Promise状态以及该如何处理
+        --使用Promise
+            根据promise返回的状态指定要执行的函数
+        --Promise链
+            Promise返回到另一个Promise的形式，类似于回调嵌套
+            示例：Fetch API
+                    调用fetch()相当于使用new Promise()来定义promise
+        --错误处理
+            使用catch捕获
+            - 级联错误
+                由catch捕获另一个catch的错误，类似于Promise链
+        --多个Promise协同工作
+            - Promise.all()
+                定义Promise列表，并在所有的Promise都被解决后执行一些操作
+            - Promise.race()
+                定义Promise列表，并在第一个Promise都被解决后执行一些操作
+    --常见错误反馈
+        ~ Uncaught TypeError: undefined is not a promise
+            需要确保使用的时new Promise()而不是Promise()
+        ~ UnhandledPromiseRejectionWarning
+            Promise被拒绝后没有catch语句接收错误并处理，需要在Promise的then语句后添加catch语句
     https://nodejs.dev/learn/understanding-javascript-promises
+
+--async/await
+    --简介
+        异步函数是Promise和生成器的组合、是Promise的更高级别的抽象
+        async/await建立在Promise之上，是改进升级版
+        -- 为什么引入async/await
+            减少Promise的样式模板，突破Promise链的“不破坏链条”限制条件
+            Promise本身增加了复杂性（语法和结构上），async/await为了解决Promise的复杂性而存在
+            async/await的代码看似同步实则异步、并且在后台无阻塞的运行
+        -- 优点
+            代码更易阅读
+                多个async/await异步函数串联时比Promise链更具有可读性
+            更容易调试
+    --async/await的工作原理
+        调用返回Promise的异步函数时，在前面加上await会使调用的代码等待Promise返回状态后执行【委托函数必须被定义为async】
+        在任何函数前加上async关键字意味着函数会返回promise，即使没有显式声明也会在内部返回promise
+    --示例 async_await.js
