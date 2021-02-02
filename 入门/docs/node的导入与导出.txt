@@ -1,0 +1,21 @@
+-----------node的导入与导出-------------
+###### mmys-zh
+###### 2021/02/02
+
+
+--导入
+    node内置的require模块提供导入功能
+    -- require()模块
+        示例：
+            const library = require('./library')
+        导入的前提条件时被导入文件提供了导出接口
+--导出
+    node内部的 module.exports API提供了定义导出接口的方法
+    两种方式：
+        · 将对象分配给 module.exports
+        · 将对象作为属性添加到 exports上
+        两种方式的区别：
+            module.exports导出指向的对象
+            exports导出指向对象的属性
+        示例：
+            exports.js

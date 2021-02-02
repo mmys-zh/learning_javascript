@@ -1,0 +1,39 @@
+--------------npm包管理工具----------------
+###### mmys-zh
+###### 2021/02/02
+
+
+--npm简介
+    node的标准软件包管理工具
+    起初被用于node包的下载和管理，后来也被前端js所使用
+    tip:yarn是npm的替代解决方案，同npm功能一样
+--npm的使用
+    --下载安装包：
+        · 安装所有依赖项
+            npm install     【依照package.json文件下载安装】
+        · 安装单个软件包
+            npm install <package-name>
+                更多参数：
+                    · npm install <package-name> --save  安装并将条目添加到package.json文件依赖项
+                    · npm install <package-name> --save-dev  安装并将条目添加到package.json文件devDependencies中
+        ` 安装的两种类型
+            · 本地安装  
+                npm install <package-name>
+                安装在当前文件树的node_modules子文件夹下
+            · 全局安装  
+                npm install -g <package-name>
+                安装在全局位置
+                    npm root -g 【显示全局安装的位置】
+    --更新包
+        · 更新所有包
+            npm update
+        · 更新单个包
+            npm update <package-name>
+    --管理版本
+        · npm version
+        TIP: 使用nvm可以同步管理node和npm的版本
+    --运行任务
+        · npm run <task-name> 【在package.json文件中定义任务名】
+--使用或执行npm安装的包
+    · 在代码中使用require模块引入软件包
+    · 使用npx执行软件包

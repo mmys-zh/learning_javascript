@@ -1,0 +1,5 @@
+----------------package.json文件------------------
+###### mmys-zh
+###### 2021/02/02
+
+https://nodejs.dev/learn/the-package-json-guide

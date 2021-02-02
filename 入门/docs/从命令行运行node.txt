@@ -1,0 +1,125 @@
+------------从命令行运行Node-----------
+###### mmys-zh
+###### 2021/02/02
+
+
+--使用node
+    ` node 文件名 【例如：node app.js】
+        · 可以接受参数（参数可以是键值对）
+            【node app.js joe】【node app.js name=joe】
+            参数值会改变在node代码中检索这个值的方式，检索方法是使用process.argv属性
+                argv属性是一个包含所有命令行调用参数的数组
+                    - 第一个元素是node命令的完整路径
+                    - 第二个元素是正在执行的文件的完整路径
+                    - 第三个元素开始，所有其他参数都存在
+                tip: minimist库可用于处理参数
+
+
+-----------退出node程序-----------------
+###### mmys-zh
+###### 2021/02/02
+
+
+--命令行
+    ` ctrl+c
+--代码
+    ` process.exit(number)
+        · number  数值型参数，不同数值代表不同的含义，范围：0,1-13,>128
+            https://nodejs.org/api/process.html#process_exit_codes
+--服务器程序中
+    ` process.on('SIGTERM', () => {
+        server.close(() => {
+            console.log('Process terminated')
+        })
+      })
+--函数中
+    ` process.kill(process.pid, 'SIGTERM')
+    ` 
+        · SIGKILL是告诉进程立即终止的信号，理想情况下，其行为类似于process.exit()
+        · SIGTERM是告诉进程正常终止的信号。这是从诸如upstart或supervisord其他许多流程管理器发出的信号
+
+
+----------node读取环境变量---------------------
+###### mmys-zh
+###### 2021/02/02
+
+
+--使用process核心模块
+    process不需要引入，是默认引入的模块
+    使用process模块的env属性进行访问  【process.env.环境变量】
+    示例：
+        process.env.NODE_ENV   【访问NODE_ENV环境变量】
+
+
+
+---------使用node交互解释器-------------------
+###### mmys-zh
+###### 2021/02/02
+
+
+--启用node交互解释器
+    ` node命令
+        node
+--tab键
+    作用
+        · 标签自动完成
+        · 探索对象
+            - JavaScript对象 【Number . +tab键】
+            - 全局对象 【global . + tab键】
+--_符号
+    在某些代码后键入_，打印最后一个操作的结果
+--点命令
+    交互解释器中的特殊命令
+        .help
+        .editor
+        .break
+        .clear
+        .load
+        .save
+        .exit
+
+------------输出到命令行-------------
+###### mmys-zh
+###### 2021/02/02
+
+
+--console模块
+    提供了与命令行交互的方法
+    - console.log()
+        将参数输出到控制台，默认强制结果为字符串
+            格式化说明符：
+                · %s 将变量格式化为字符串
+                · %d 将变量格式化为数字
+                · %i 仅将变量格式化为其整数部分
+                · %o 将变量格式化为对象
+        使用库对输出进行着色
+            · Chalk库 【https://github.com/chalk/chalk】
+    - console.clear()
+        清除控制台界面，具体行为与终端有关
+    - console.count()
+        比较计数，独立计算不同类
+    - console.trace()
+        打印堆栈跟踪，用于了解到达代码的路径
+    - console.time()&console.timeEnd()
+        计算函数运行所需要的时间
+    - console.error
+        将错误输出到错误日志而非控制台
+--进度条
+    用于创建的相关库：
+        · Progress 【https://www.npmjs.com/package/progress】
+    
+
+-----------从命令行输入------------
+###### mmys-zh
+###### 2021/02/02
+
+
+--readline模块
+    从可读流的流中获取输入，一次仅一行
+        示例：readline.js
+            https://www.npmjs.com/package/readline-sync
+            https://nodejs.org/api/readline.html
+--Inquirer.js包
+    允许执行多项选择、单选、确认等动作
+        示例： inquirer.js
+            https://github.com/SBoudrias/Inquirer.js
