@@ -1,0 +1,21 @@
+---------------node事件触发器-----------------
+###### mmys-zh
+###### 2021/02/03
+
+
+--简介
+    用于处理用户的交互
+    由events模块的EventEmitter类提供支持
+--EventEmitter类
+    展示了很多方法，主要的时on和emit方法：
+        ~ on    用于添加将在事件触发时执行的回调函数
+        ~ emit  用于触发事件
+        ~ once  添加一次性监听器
+        ~ removeListener/off    从事件中删除事件监听器
+        ~ removeAllListeners    删除事件的所有监听器
+--使用
+    示例：event_emitter.js
+    ` 可以将参数作为附加参数传递给事件处理程序（on），再将其传递给事件处理程序（emit)
+
+--参考资源
+    http://nodejs.cn/api/events.html

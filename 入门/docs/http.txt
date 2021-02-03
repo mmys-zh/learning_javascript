@@ -1,0 +1,29 @@
+---------------http--------------------
+###### mmys-zh
+###### 2021/02/03
+
+
+-------搭建HTTP服务器
+    使用HTTP模块创建Http服务器
+    http://nodejs.cn/api/http.html
+    示例：http_server.js
+
+-------使用node发送Http请求
+    使用HTTPS模块发送请求
+    主要有以下几种请求形式
+        · get
+        · post
+            多种方式发送post请求：
+                ~ 使用Axios库  https://github.com/axios/axios
+                ~ 使用node标准模块https
+        · put
+        · delete
+        tip: post\put\delete的区别主要在于options.method选项的值不同，其他大致相同
+    示例：http_req.js
+
+-------使用node获取HTTP请求的正文数据
+    提取请求中数据并转化为json格式
+    两种方式
+        ~ 使用框架 简单些 如express
+        ~ 使用node 复杂些
+    示例：http_req_data.js
