@@ -1,0 +1,24 @@
+------------typescript-----------
+###### mmys-zh
+###### 2021/02/03
+
+
+--typescript简介
+    是JavaScript 的超集，为语言增加了新的功能(静态类型定义等)
+    --优点
+        使代码更安全,更健壮
+    --示例:
+        typescript.ts
+--在node中使用ts
+    - 安装TypeScript
+        [npm install typescript]
+    - 将ts文件编译为js文件
+        使用tsc命令
+        [tsc example.ts]
+--参考
+    https://www.typescriptlang.org/docs
+--使用TypeScript地一些开源项目
+    - NestJS    https://nestjs.com/
+    - TypeORM   https://typeorm.io/#/
+    - RxJS      https://rxjs.dev/
+    等等

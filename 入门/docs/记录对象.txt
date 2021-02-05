@@ -1,0 +1,13 @@
+------------记录对象-----------
+###### mmys-zh
+###### 2021/02/03
+
+
+--问题
+    在经过两个级别的嵌套后，Node.js 会放弃内容并打印 [Object] 作为占位符
+--解决方案
+    ` 使用JSON.stringify(obj, null, 2)
+        其中 2 是用于缩进的空格数
+    ` 引入util模块
+        [require('util').inspect.defaultOptions.depth = null
+        console.log(obj)]

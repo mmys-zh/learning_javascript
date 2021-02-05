@@ -1,0 +1,20 @@
+------------------Node.js 开发环境与生产环境-------------------
+###### mmys-zh
+###### 2021/02/03
+
+
+--区别
+    - 生产环境和开发环境使用不同的配置
+    - node默认开发环境,生产环境需要配置环境变量NODE_ENV=production
+--生产环境的优点
+    - 日志记录保持在最低水平
+    - 更高的缓存级别以优化性能
+--使用生产环境的方式
+    -shell
+        ` export NODE_ENV=production
+        ` NODE_ENV=production node app.js
+    -代码
+        配置环境变量NODE_ENV=production
+--判断使用
+    使用条件语句判断所处环境
+    示例: dev_pro.js

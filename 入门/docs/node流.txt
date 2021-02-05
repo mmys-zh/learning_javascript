@@ -1,3 +1,54 @@
 ------------------node流(Streams)-----------------------
 ###### mmys-zh
 ###### 2021/02/03
+
+
+--简介
+    流是一种以高效的方式处理读/写文件、网络通信、或任何类型的端到端的信息交换方式
+    逐个片段地读取并处理,无需整体读入内存后处理,像小溪淌水一样接受并处理数据
+    --优点
+        内存效率  (内存占用少)
+        时间效率  (边接收边处理,时间用的更少)
+    --与传统读取数据地区别
+        类似于用水管从河里抽水浇地和从河里打水到水库里再从水库开闸放水的区别
+    --示例
+        fs_streams.js
+--pipe()
+    --作用:获取来源流，并将其通过管道传输到目标流
+    --使用注意事项
+        在来源流上调用它
+        返回值是目标流，使得可以链接多个 pipe() 调用
+        [src.pipe(dest1).pipe(dest2)] === [src.pipe(dest1);dest1.pipe(dest2)]
+--支持流技术地nodeAPI
+    ` process.stdin
+    ` process.stdout
+    ` process.stderr
+    ` fs.createReadStream()
+    ` fs.createWriteStream()
+    ` net.connect()
+    ` http.request()
+    ` zlib.createGzip()
+    ` zlib.createGunzip()
+    ` zlib.createDeflate()
+    ` zlib.createInflate()
+--流的分类
+    ` Readable
+    ` Writable
+    ` Duplex
+    ` Transform
+--使用
+    --创建只读流
+        示例:streams_readable.js
+        https://nodejs.org/api/stream.html
+    --创建可写流
+        示例:streams_writeable.js
+    --从可读流中获取数据
+        示例:streams_readable_use.js
+        ` 使用可写流
+        ` 使用 readable 事件
+    --发送数据到可写流
+        使用流的write()方法
+        示例:streams_writeable_use.js
+    --通知可写流已结束写入操作
+        使用end()方法
+        示例:streams_writeable_use.js

@@ -1,0 +1,28 @@
+------------错误处理-----------
+###### mmys-zh
+###### 2021/02/03
+
+
+--简介
+    Node.js 中的错误通过异常进行处理
+--创建异常
+    使用 throw 关键字
+        [throw value]
+        前端代码value 是任何js值
+        node代码value 是错误对象
+--错误对象
+    错误对象是 Error 对象的实例、或者继承自 Error 类（由 Error 核心模块提供）http://nodejs.cn/api/errors.html
+        ` [throw new Error('错误信息')]
+        ` [class NotEnoughCoffeeError extends Error {//...};throw new NotEnoughCoffeeError()]
+--处理异常
+    使用try/catch 语句
+--捕获未捕获地异常
+    监听 process 对象上的 uncaughtException 事件
+        `[process.on('uncaughtException', err => {
+            console.error('有一个未捕获的错误', err)
+            process.exit(1) //强制性的（根据 Node.js 文档）
+         })]
+--Promise 的异常
+    使用 promise 可以链接不同的操作，并在最后处理错误(使用catch捕获异常)
+--async/await 的错误处理
+    使用try/catch 语句
