@@ -4,7 +4,8 @@
   </div> -->
 
   <div class="post">
-    <button @click="fetchData">load</button>
+    <p>id传值：{{id}}</p>
+    <button @click="fetchData">{{loading?"load":"error"}}</button>
     <div v-if="loading" class="loading">
       Loading...
     </div>
@@ -28,6 +29,9 @@ export default {
       post: null,
       error: null
     }
+  },
+  props:{
+    id:String
   },
   created () {
     // 组件创建完后获取数据，

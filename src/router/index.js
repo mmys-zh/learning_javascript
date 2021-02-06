@@ -15,18 +15,23 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
-    alias:'/index',
+    alias:['/index','/home'],
     children:[
         {
-        path:'views',
-        component:{
-            default:Home,
-            a:Topics,
-            b:Items
-        },
+        path:'items_home',
+        components: {
+          lists: Items,
+          list: Item,
+          itemAdd: ItemAdd
+        }
+        // component:Items
         },{
             path:'topic_home',
-            component:Topic
+            components: {
+              lists: Topics,
+              list: Topic,
+              itemAdd: TopicAdd
+            }
         }
     ],
     beforeEnter:(to,from,next)=>{
@@ -78,9 +83,10 @@ const routes = [
     ]
   },
   {
-    path: '/item',
+    path: '/item/:id',
     name: 'Item',
-    component: Item
+    component: Item,
+    props:true
   },
   {
     path: '/item_add',
@@ -113,6 +119,7 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
+  linkActiveClass:'router-link-active',
   routes
 })
 
