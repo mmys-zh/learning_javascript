@@ -4,9 +4,9 @@
 
 # 主要内容
 
-- nodejs环境搭建
-- nodejs编码规范
-- nodejs包管理机制
+- √ nodejs环境搭建
+- √ nodejs编码规范
+- √ nodejs包管理机制
 - nodejs网络开发
 - nodejs文件模块使用
 - nodejs数据库开发
